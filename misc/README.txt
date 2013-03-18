@@ -22,7 +22,8 @@ SYSTEM PREREQUISITES
 
 
 2. Install Python
-  
+    #. Build Python from source code.
+    #. MACS2 (one of the peakcalling tools) must have python version equal to 2.7.x 
   >. sudo apt-get install zlib1g-dev
   >. sudo ln -s /lib/x86_64-linux-gnu/libz.so.1 /lib/libz.so
   >. wget http://www.python.org/ftp/python/2.7.3/Python-2.7.3.tar.bz2
@@ -34,7 +35,8 @@ SYSTEM PREREQUISITES
 
 
 
-3.  install Numpy 
+3.  install Numpy
+    # numpy is required to run MACS2 
   >. git clone git://github.com/numpy/numpy.git numpy
   >. cd numpy
   >. sudo python setup.py build
@@ -45,7 +47,7 @@ SYSTEM PREREQUISITES
 TOOL SETUP and SHARE MOUNT
 ===============================================================================================
 
-1. setup modENCODE tools for alignments and peak calls
+1. setup modENCODE tools for alignments(REFERENCE) and peakcalls(REFERENCE)
   >. cd /modencode
   >. wget http://data.modencode.org/modENCODE_Galaxy/tarballs/tools.tar
   >. tar xvf tools.tar 
@@ -57,7 +59,7 @@ TOOL SETUP and SHARE MOUNT
 
 
 3. Mount data to server. 
-   commands to mount and insgtall client
+   commands to mount and install client
   >. mount `ec2.domain.instance.com`:/mnt/data /mnt/data 
      (`ec2.damin.instance.com` will be updated with NFS master server's URL)
 
@@ -139,5 +141,23 @@ OTHERS
 
 
 
+
+REFERENCES
+===============================================================================================
+
+1. Alignment:
+  >. http://en.wikipedia.org/wiki/Sequence_alignment
+
+2. Peakcalling
+  >. http://en.wikipedia.org/wiki/Peak_calling  
+
+2. FASTA:
+  >. http://en.wikipedia.org/wiki/FASTA_format
+
+3. FASTQ:
+  >. http://en.wikipedia.org/wiki/FASTQ_format
+
+4. BAM:
+  >. http://bio-bwa.sourceforge.net
 
 
