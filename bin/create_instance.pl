@@ -434,7 +434,8 @@ sub createInstance
 
 	$instanceID = getInstanceID($cmdOutput);
 
-	# label the instance 
+	# label the instance
+	sleep 5;
 	$cmdOutput = `ec2-create-tags $instanceID  -t Name=\"$instanceName\"`;
 	
 	my $URL = GetURL($instanceID);
