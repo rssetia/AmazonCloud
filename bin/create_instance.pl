@@ -38,6 +38,7 @@ if ((length($region) == 0) || (length($availabilityZone)==0))
 
 if ( (length($keyPair) == 0) || (length($securityGroup) == 0) || (length($instanceType) == 0) || (length($instanceName) == 0) || (length($ami) == 0) || (length($numberOfInstances)== 0)) {
 	print "\n\nPlease check your config file and make sure all configuration attributes are defined!\n\n";
+	exit (1);
 }
 
 # Make sure all the paramenters have been specified in the config file before processing
