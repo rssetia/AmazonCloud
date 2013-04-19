@@ -110,10 +110,7 @@ sub get_target {
 				my @target = split("\t", $i);
 				$instanceID = $target[2];
 				$instanceURL = GetURL($instanceID);
-				# Check if the instance is still running or terminated
-				if (length($instanceURL) == 0) {
-					$instanceURL = "Terminated";
-				}
+			
 				# Concatenate two striing variables and return a newe string representing specific instances 
 				$allInstance = $instanceID." ".$allInstance;
 				my $instance = $instanceID." ".$instanceURL;
@@ -296,6 +293,10 @@ sub GetURL
 				$complete = 1;
 			} elsif (($line =~ /^INSTANCE/) && ($line =~/terminated/)) {
 				$complete = 1;
+				$URL = "Terminated";
+			} elsif (($line =~ /^INSTANCE/) && ($line =~/stopped/)) {
+				$complete = 1;
+				$URL = "Stopped";
 			}
 		}
 	}
